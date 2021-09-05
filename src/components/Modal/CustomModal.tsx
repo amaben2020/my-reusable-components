@@ -1,9 +1,11 @@
-import React, { ReactChild } from 'react';
+import React from 'react';
 import styles from './../../styles/modal.module.scss';
 import FontAwesome from 'react-fontawesome';
 const CustomModal = (props: {
   children?: React.ReactNode;
   closeModal?: () => void;
+  big?: string;
+  small?: string;
 }) => {
   const closeicon = () => (
     <FontAwesome
@@ -21,10 +23,12 @@ const CustomModal = (props: {
       }}
     />
   );
-  const { closeModal } = props;
+  const { closeModal, big, small } = props;
   return (
     <div className={styles.overlay}>
-      <div className={styles.content}>
+      <div
+        className={big ? styles.content : small ? styles.small : styles.content}
+      >
         {closeicon()}
         {props.children}
       </div>
@@ -33,3 +37,6 @@ const CustomModal = (props: {
 };
 
 export default CustomModal;
+function big(big: any) {
+  throw new Error('Function not implemented.');
+}

@@ -6,7 +6,7 @@ interface IProps {
   fullWidth?: string;
 }
 
-const Button = ({ title, onClick, inverted, fullWidth }: IProps) => {
+const ReusableButton = ({ title, onClick, inverted, fullWidth }: IProps) => {
   return (
     <div>
       <button
@@ -25,4 +25,4 @@ const Button = ({ title, onClick, inverted, fullWidth }: IProps) => {
   );
 };
 
-export default Button;
+export default ReusableButton;

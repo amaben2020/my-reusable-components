@@ -1,4 +1,3 @@
-import NavigationBar from '../NavBar/NavigationBar';
 import styles from './../../styles/layout.module.scss';
 
 interface IMyChildren {
@@ -8,10 +7,7 @@ interface IMyChildren {
 const Layout = ({ children }: IMyChildren) => {
   return (
     <div className={styles.layout}>
-      <>
-        <NavigationBar />
-        {children}
-      </>
+      <>{children}</>
     </div>
   );
 };
